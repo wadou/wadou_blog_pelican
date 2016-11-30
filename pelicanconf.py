@@ -34,8 +34,18 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
+# wadou theme
 THEME = "themes/pelican-elegant"
+
+# wadou plugins
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["extract_toc"]
+
+# wadou date
 DEFAULT_DATE = 'fs'
 DEFAULT_DATE_FORMAT = '%a %Y/%m/%d %H:%M:%S'
+
+# wadou landing page about
+LANDING_PAGE_ABOUT = {
+        'title': '',
+        'details': 'what do you want to know about me?'}
