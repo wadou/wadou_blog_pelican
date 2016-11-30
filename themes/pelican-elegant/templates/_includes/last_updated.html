@@ -5,8 +5,8 @@ If it is >3.3 than modified is a datetime object
 {% if article.locale_modified and article.modified %}
 
 <h4>Last Updated</h4>
-{% set day = article.modified.strftime('%d')|int %}
-<time datetime="{{ article.modified.isoformat() }}">{{ article.modified.strftime('%b') }} {{ day }} {{- article.modified.strftime(', %Y') }}</time>
+{% set day = article.modified.strftime('%Y/%m/%d %H:%M:%S') %}
+<time datetime="{{ article.modified.isoformat() }}">{{ day }}</time>
 
 {% elif article.modified %}
 <h4>Last Updated</h4>
