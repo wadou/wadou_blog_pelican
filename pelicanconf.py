@@ -38,4 +38,4 @@ THEME = "themes/pelican-elegant"
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["extract_toc"]
 DEFAULT_DATE = 'fs'
-DEFAULT_DATE_FORMAT = '%a %d/%m/%Y %H:%M:%S'
+DEFAULT_DATE_FORMAT = '%a %Y/%m/%d %H:%M:%S'
