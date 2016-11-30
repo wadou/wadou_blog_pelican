@@ -37,3 +37,5 @@ DEFAULT_PAGINATION = 10
 THEME = "themes/pelican-elegant"
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["extract_toc"]
+DEFAULT_DATE = 'fs'
+DEFAULT_DATE_FORMAT = '%a %d/%m/%Y %H:%M:%S'
