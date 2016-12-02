@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'wadou'
 SITENAME = 'wadou\'s blog'
-SITEURL = ''
+SITEURL = 'http://localhost:8000'
 
 PATH = 'content'
 
@@ -26,7 +26,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
+SOCIAL = (('Email', 'wei_pengfei@163.com'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
