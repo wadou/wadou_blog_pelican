@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="wadou" />
+        <meta name="copyright" content="wadou" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="pelican, python, blog, python, " />
+
+<meta property="og:title" content="使用pelican搭建博客 "/>
+<meta property="og:url" content="/shi-yong-pelicanda-jian-bo-ke.html" />
+<meta property="og:description" content="使用pelican搭建博客 简介 pelican是一个用python写的静态博客生成器，可以方便的把Markdown文本转换为静态Html文本。 相关路径 官方文档：http://docs.getpelican.com/ 源码：https://github.com/getpelican/pelican 插件：https://github.com/getpelican/pelican-plugins 主题：https://github.com/getpelican/pelican-themes 安装 安装python 到官方网站https://www.python.org/下载安装。 创建virtualenv环境 这一步可选，virtualenv可方便管理多个隔离的python环境，这里创建一个供pelican使用的专用python环境。 //安装virtualenv pip install virtualenv //创建名称为pelican的virtualenv环境 virtualenv pelican //进入pelican隔离环境目录，找到如下脚本并执行以激活环境 activate …" />
+<meta property="og:site_name" content="wadou&#39;s blog" />
+<meta property="og:article:author" content="wadou" />
+<meta property="og:article:published_time" content="2016-12-07T22:55:00+08:00" />
+<meta property="" content="2016-12-07T22:55:00+08:00" />
+<meta name="twitter:title" content="使用pelican搭建博客 ">
+<meta name="twitter:description" content="使用pelican搭建博客 简介 pelican是一个用python写的静态博客生成器，可以方便的把Markdown文本转换为静态Html文本。 相关路径 官方文档：http://docs.getpelican.com/ 源码：https://github.com/getpelican/pelican 插件：https://github.com/getpelican/pelican-plugins 主题：https://github.com/getpelican/pelican-themes 安装 安装python 到官方网站https://www.python.org/下载安装。 创建virtualenv环境 这一步可选，virtualenv可方便管理多个隔离的python环境，这里创建一个供pelican使用的专用python环境。 //安装virtualenv pip install virtualenv //创建名称为pelican的virtualenv环境 virtualenv pelican //进入pelican隔离环境目录，找到如下脚本并执行以激活环境 activate …">
+
+        <title>使用pelican搭建博客  · wadou&#39;s blog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>wadou's blog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="">Home</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/shi-yong-pelicanda-jian-bo-ke.html"> 使用pelican搭建博客  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#pelican">使用pelican搭建博客</a><ul>
+<li><a href="#_1">简介</a><ul>
+<li><a href="#_2">相关路径</a></li>
+</ul>
+</li>
+<li><a href="#_3">安装</a><ul>
+<li><a href="#python">安装python</a></li>
+<li><a href="#virtualenv">创建virtualenv环境</a></li>
+<li><a href="#pelican_1">安装pelican</a></li>
+<li><a href="#markdown">安装markdown</a></li>
+</ul>
+</li>
+<li><a href="#pelican_2">pelican的使用</a><ul>
+<li><a href="#pelican_3">生成pelican工程</a></li>
+<li><a href="#markdown_1">添加markdown文件</a></li>
+<li><a href="#_4">生成博客</a></li>
+<li><a href="#_5">预览博客</a></li>
+<li><a href="#_6">发布博客</a></li>
+</ul>
+</li>
+<li><a href="#faq">FAQ</a><ul>
+<li><a href="#pelican-quickstart">pelican-quickstart 报错如何解决？</a><ul>
+<li><a href="#_7">问题</a></li>
+<li><a href="#_8">解决方法</a></li>
+</ul>
+</li>
+<li><a href="#markdowntoc">如何使支持markdown的TOC？</a></li>
+<li><a href="#_9">如何使用主题？</a></li>
+</ul>
+</li>
+<li><a href="#_10">参考</a></li>
+<li><a href="#_11">本博客源码</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+
+            
+            
+<h1 id="pelican">使用pelican搭建博客</h1>
+<h2 id="_1">简介</h2>
+<p>pelican是一个用python写的静态博客生成器，可以方便的把Markdown文本转换为静态Html文本。</p>
+<h3 id="_2">相关路径</h3>
+<ul>
+<li>官方文档：<a href="http://docs.getpelican.com/">http://docs.getpelican.com/</a></li>
+<li>源码：<a href="https://github.com/getpelican/pelican">https://github.com/getpelican/pelican</a></li>
+<li>插件：<a href="https://github.com/getpelican/pelican-plugins">https://github.com/getpelican/pelican-plugins</a></li>
+<li>主题：<a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a></li>
+</ul>
+<h2 id="_3">安装</h2>
+<h3 id="python">安装python</h3>
+<p>到官方网站<a href="https://www.python.org/">https://www.python.org/</a>下载安装。</p>
+<h3 id="virtualenv">创建virtualenv环境</h3>
+<p>这一步可选，virtualenv可方便管理多个隔离的python环境，这里创建一个供pelican使用的专用python环境。</p>
+<div class="highlight"><pre><span></span>//安装virtualenv
+pip install virtualenv
+
+//创建名称为pelican的virtualenv环境
+virtualenv pelican
+
+//进入pelican隔离环境目录，找到如下脚本并执行以激活环境
+activate
+</pre></div>
+<h3 id="pelican_1">安装pelican</h3>
+<p>下载最新pelican源码，进入源码目录。<br>
+在pelican的virtualenv环境中安装</br></p>
+<div class="highlight"><pre><span></span>python setup.py install
+</pre></div>
+<h3 id="markdown">安装markdown</h3>
+<div class="highlight"><pre><span></span>pip install markdown
+</pre></div>
+<h2 id="pelican_2">pelican的使用</h2>
+<h3 id="pelican_3">生成pelican工程</h3>
+<p>创建一个目录myblog，进入该目录，执行以下命令生成pelican博客工程</p>
+<div class="highlight"><pre><span></span>pelican-quickstart
+</pre></div>
+<p>命令执行后，会要求输入各种配置项，都可以选择默认，后面如果有需要可以在生成的配置文件中修改。<br>
+生成完毕，可以看到如下结构的目录</br></p>
+<div class="highlight"><pre><span></span>|-myblog  
+    |---content                   #存放markdown源文件
+    |---output                    #生成的html文件会在这里
+    |---develop_server.sh         
+    |---fabfile.py
+    |---Makefile
+    |---pelicanconf.py            #配置文件
+    |---publishconf.py
+</pre></div>
+<h3 id="markdown_1">添加markdown文件</h3>
+<p>创建一个markdown文件，内容如下</p>
+<div class="highlight"><pre><span></span><span class="n">Title</span><span class="o">:</span> <span class="n">My</span> <span class="kd">super</span> <span class="n">title</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">03</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span>
+<span class="n">Modified</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">19</span><span class="o">:</span><span class="mi">30</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">Python</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">pelican</span><span class="o">,</span> <span class="n">publishing</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">my</span><span class="o">-</span><span class="kd">super</span><span class="o">-</span><span class="n">post</span>
+<span class="n">Authors</span><span class="o">:</span> <span class="n">Alexis</span> <span class="n">Metaireau</span><span class="o">,</span> <span class="n">Conan</span> <span class="n">Doyle</span>
+<span class="n">Summary</span><span class="o">:</span> <span class="n">Short</span> <span class="n">version</span> <span class="k">for</span> <span class="n">index</span> <span class="n">and</span> <span class="n">feeds</span>
+
+<span class="n">This</span> <span class="k">is</span> <span class="n">the</span> <span class="n">content</span> <span class="n">of</span> <span class="n">my</span> <span class="kd">super</span> <span class="n">blog</span> <span class="n">post</span><span class="o">.</span>
+</pre></div>
+<p>将文件放入content目录中</p>
+<h3 id="_4">生成博客</h3>
+<p>在myblog目录中执行如下命令</p>
+<div class="highlight"><pre><span></span>pelican content
+</pre></div>
+<p>命令执行完毕，在output目录下就会生成对应的html文件</p>
+<h3 id="_5">预览博客</h3>
+<p>进入output目录，执行如下命令启动服务</p>
+<div class="highlight"><pre><span></span>python -m pelican.server
+</pre></div>
+<p>服务启动后，在浏览器中使用地址http://localhost:8000可查看博客效果</p>
+<h3 id="_6">发布博客</h3>
+<p>将output目录中的内容上传到github pages工程中或者coding pages工程中，即可通过github pages或coding pages访问博客<br>
+本博客源码参考<a href="https://github.com/wadou/wadou_blog_pelican">这里</a></br></p>
+<h2 id="faq">FAQ</h2>
+<h3 id="pelican-quickstart">pelican-quickstart 报错如何解决？</h3>
+<h4 id="_7">问题</h4>
+<p>执行<code>pelican-quickstart</code>报错</p>
+<blockquote>
+<p>".....\pelican\tools\pelican_quickstart.py", line 52, in \&lt;module&gt;
+  'lang': locale.getlocale()[0].split('_')[0], 
+  AttributeError: 'NoneType' object has no attribute 'split'  </p>
+</blockquote>
+<p>参考 <a href="https://github.com/getpelican/pelican/issues/2043">https://github.com/getpelican/pelican/issues/2043</a><br>
+因为<code>locale.getlocale()</code> returns <code>(None, None)</code></br></p>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="n">pelican</span><span class="p">)</span> <span class="n">E</span><span class="p">:</span>\<span class="o">&gt;</span><span class="n">python</span>
+<span class="n">Python</span> <span class="mf">3.4</span><span class="o">.</span><span class="mi">3</span> <span class="p">(</span><span class="n">v3</span><span class="o">.</span><span class="mf">4.3</span><span class="p">:</span><span class="mi">9</span><span class="n">b73f1c3e601</span><span class="p">,</span> <span class="n">Feb</span> <span class="mi">24</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">22</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mo">06</span><span class="p">)</span> <span class="p">[</span><span class="n">MSC</span> <span class="n">v</span><span class="o">.</span><span class="mi">1600</span> <span class="mi">32</span> <span class="n">bit</span> <span class="p">(</span><span class="n">In</span>
+<span class="n">tel</span><span class="p">)]</span> <span class="n">on</span> <span class="n">win32</span>
+<span class="n">Type</span> <span class="s2">"help"</span><span class="p">,</span> <span class="s2">"copyright"</span><span class="p">,</span> <span class="s2">"credits"</span> <span class="ow">or</span> <span class="s2">"license"</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">locale</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">locale</span><span class="o">.</span><span class="n">getlocale</span><span class="p">()</span>
+<span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">locale</span><span class="o">.</span><span class="n">getdefaultlocale</span><span class="p">()</span>
+<span class="p">(</span><span class="s1">'zh_CN'</span><span class="p">,</span> <span class="s1">'cp936'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="s2">"Chinese_People's Republic of China.936"</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">locale</span><span class="o">.</span><span class="n">getlocale</span><span class="p">()</span>
+<span class="p">(</span><span class="s2">"Chinese_People's Republic of China"</span><span class="p">,</span> <span class="s1">'936'</span><span class="p">)</span>
+</pre></div>
+<h4 id="_8">解决方法</h4>
+<p>修改源码tools目录中的pelican_quickstart.py文件  </p>
+<div class="highlight"><pre><span></span>'lang': locale.getlocale()[0].split('_')[0],
+</pre></div>
+<p>修改为</p>
+<div class="highlight"><pre><span></span>'lang': 'Chinese',
+</pre></div>
+<p>直接使用中文，修改后，重新安装pelican使生效，详细修改见<a href="https://github.com/wadou/pelican/commit/24817a5543edf88af73474ce17405eac62758b39">https://github.com/wadou/pelican/commit/24817a5543edf88af73474ce17405eac62758b39</a></p>
+<h3 id="markdowntoc">如何使支持markdown的TOC？</h3>
+<ol>
+<li>安装beautifulsoup4<br>
+进入virtualenv环境，执行以下命令安装，该安装为插件<code>extract_toc</code>的必备依赖项</br></li>
+</ol>
+<div class="highlight"><pre><span></span>pip install beautifulsoup4
+</pre></div>
+<ol>
+<li>下载<code>extract_toc</code>插件 <br>
+到<a href="https://github.com/getpelican/pelican-plugins/tree/master/extract_toc">https://github.com/getpelican/pelican-plugins/tree/master/extract_toc</a>下载插件</br></li>
+<li>安装插件<br>
+在blog目录下建立<code>plugins</code>目录，将下载的插件拷贝至该目录</br></li>
+<li>设置插件<br>
+打开blog目录下的<code>pelicanconf.py</code>配置文件，增加如下内容</br></li>
+</ol>
+<div class="highlight"><pre><span></span>PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["extract_toc"]
+</pre></div>
+<ol>
+<li>MD_EXTENSIONS无法设置的解决办法<br>
+<a href="http://docs.getpelican.com/en/stable/settings.html">官方文档</a>中说明在<code>pelicanconf.py</code>配置文件中的<code>MD_EXTENSIONS</code>项中设置markdown属性，但是实际发现<code>MD_EXTENSIONS</code>已被废弃<blockquote>
+<p>MD_EXTENSIONS is deprecated use MARKDOWN instead.    </p>
+</blockquote>
+</br></li>
+</ol>
+<p>在pelican源码路径中的<code>settings.py</code>增加如下代码</p>
+<div class="highlight"><pre><span></span>'MARKDOWN': {
+         'extension_configs': {
+              'markdown.extensions.codehilite': {'css_class': 'highlight'},
+              'markdown.extensions.extra': {},
+              'markdown.extensions.meta': {},
+              'markdown.extensions.toc': {},
+          },
+</pre></div>
+<p>修改后需要重新安装pelican使生效<br>
+详细修改参考<a href="https://github.com/wadou/pelican/commit/1c2c662fa0cee857cbfa3c16032bf944d095fe40">https://github.com/wadou/pelican/commit/1c2c662fa0cee857cbfa3c16032bf944d095fe40</a><br>
+markdown的详细扩展列表可参考<a href="http://pythonhosted.org/Markdown/extensions/">http://pythonhosted.org/Markdown/extensions/</a> </br></br></p>
+<h3 id="_9">如何使用主题？</h3>
+<ul>
+<li>主题预览：<a href="http://www.pelicanthemes.com/">http://www.pelicanthemes.com/</a></li>
+<li>主题源码：<a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a></li>
+</ul>
+<p>本博客在elegant主题的基础上进行改造
+- elegant文档：<a href="http://oncrashreboot.com/elegant-best-pelican-theme-features">http://oncrashreboot.com/elegant-best-pelican-theme-features</a>
+- elegant文档源码：<a href="https://github.com/talha131/onCrashReboot">https://github.com/talha131/onCrashReboot</a>
+- elegant源码：<a href="https://github.com/talha131/pelican-elegant/">https://github.com/talha131/pelican-elegant/</a></p>
+<p>使用方法<br>
+1. 在myblog目录下建立<code>themes</code>目录
+2. 下载elegant源码，并放入<code>themes</code>目录
+3. 修改<code>pelicanconf.py</code>如下，增加主题配置</br></p>
+<div class="highlight"><pre><span></span>THEME = "themes/pelican-elegant"
+</pre></div>
+<h2 id="_10">参考</h2>
+<ol>
+<li>http://basov.net/en/pages/about-site.html</li>
+<li>http://me.blogabs.cc/</li>
+<li>https://www.zhihu.com/question/20376047</li>
+<li>http://wonux.github.io/git-pelican-elegant.html</li>
+<li>http://wonux.github.io/git-pelican.html</li>
+<li>https://www.zhihu.com/search?type=content&amp;q=pelican</li>
+<li>https://pypi.python.org/pypi</li>
+<li>https://www.linuxzen.com/shi-yong-pelicanda-zao-jing-tai-bo-ke.html</li>
+</ol>
+<h2 id="_11">本博客源码</h2>
+<ul>
+<li>pelican：<a href="https://github.com/wadou/pelican">https://github.com/wadou/pelican</a></li>
+<li>elegant主题：<a href="https://github.com/wadou/pelican-elegant">https://github.com/wadou/pelican-elegant</a></li>
+<li>博客：<a href="https://github.com/wadou/wadou.github.io">https://github.com/wadou/wadou.github.io</a></li>
+<li>博客工程：<a href="https://github.com/wadou/wadou_blog_pelican">https://github.com/wadou/wadou_blog_pelican</a></li>
+</ul>
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2016-12-07T22:55:00+08:00">2016/12/07 22:55:00</time>
+
+<h4>Last Updated</h4>
+<time datetime="2016-12-07T22:55:00+08:00">2016/12/07 22:55:00</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#python-ref">python</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags.html#blog-ref">blog
+                    <span>2</span>
+</a></li>
+                <li><a href="/tags.html#pelican-ref">pelican
+                    <span>1</span>
+</a></li>
+                <li><a href="/tags.html#python-ref">python
+                    <span>3</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="wei_pengfei@163.com" title="My Email Address" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-envelope sidebar-social-links"></i></a>
+    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-another social link sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>
