@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="wadou" />
+        <meta name="copyright" content="wadou" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="java, 环境变量, java, " />
+
+<meta property="og:title" content="java环境变量设置 "/>
+<meta property="og:url" content="/javahuan-jing-bian-liang-she-zhi.html" />
+<meta property="og:description" content="java环境变量设置 windows xp 配置 右键我的电脑--&gt;属性打开系统属性界面 在高级页签下点击环境变量按钮，打开环境变量设置页面 在系统变量下点击新建，设置JAVA_HOME，如图，变量名为JAVA_HOME，变量值为安装的jdk路径 在系统变量中找到Path，在Path的值中增加%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin，注意，不同的值之间要用分号隔开，如图 在系统变量中找到CLASSPATH，在CLASSPATH的值中增加%JAVA_HOME%\lib;%JAVA_HOME%\lib …" />
+<meta property="og:site_name" content="wadou&#39;s blog" />
+<meta property="og:article:author" content="wadou" />
+<meta property="og:article:published_time" content="2017-01-15T11:29:00+08:00" />
+<meta property="" content="2017-01-15T11:29:00+08:00" />
+<meta name="twitter:title" content="java环境变量设置 ">
+<meta name="twitter:description" content="java环境变量设置 windows xp 配置 右键我的电脑--&gt;属性打开系统属性界面 在高级页签下点击环境变量按钮，打开环境变量设置页面 在系统变量下点击新建，设置JAVA_HOME，如图，变量名为JAVA_HOME，变量值为安装的jdk路径 在系统变量中找到Path，在Path的值中增加%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin，注意，不同的值之间要用分号隔开，如图 在系统变量中找到CLASSPATH，在CLASSPATH的值中增加%JAVA_HOME%\lib;%JAVA_HOME%\lib …">
+
+        <title>java环境变量设置  · wadou&#39;s blog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>wadou's blog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="">Home</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/javahuan-jing-bian-liang-she-zhi.html"> java环境变量设置  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#java">java环境变量设置</a><ul>
+<li><a href="#windows-xp">windows xp</a><ul>
+<li><a href="#_1">配置</a></li>
+<li><a href="#_2">检查配置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+
+            
+            
+<h1 id="java">java环境变量设置</h1>
+<h2 id="windows-xp">windows xp</h2>
+<h3 id="_1">配置</h3>
+<ol>
+<li>右键<code>我的电脑--&gt;属性</code>打开系统属性界面</li>
+<li>在<code>高级</code>页签下点击<code>环境变量</code>按钮，打开环境变量设置页面</li>
+<li>在<code>系统变量</code>下点击<code>新建</code>，设置<strong>JAVA_HOME</strong>，如图，变量名为<strong>JAVA_HOME</strong>，变量值为安装的jdk路径<br>
+<img alt="d4f0450c-0e45-40c7-bdef-93e53b2e5bbf" src="https://raw.githubusercontent.com/wadou/image_hosting_01/master/d4f0450c-0e45-40c7-bdef-93e53b2e5bbf.png"/></br></li>
+<li>在<code>系统变量</code>中找到<code>Path</code>，在<code>Path</code>的值中增加<code>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</code>，注意，不同的值之间要用分号隔开，如图<br>
+<img alt="d245111a-0a82-40bd-a569-b57a0f0e7993" src="https://raw.githubusercontent.com/wadou/image_hosting_01/master/d245111a-0a82-40bd-a569-b57a0f0e7993.png"/></br></li>
+<li>在<code>系统变量</code>中找到<code>CLASSPATH</code>，在<code>CLASSPATH</code>的值中增加<code>%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</code>，注意，不同的值之间要用分号隔开，如图<br>
+<img alt="309063fc-33dc-4611-8a30-186fae58d2e8" src="https://raw.githubusercontent.com/wadou/image_hosting_01/master/309063fc-33dc-4611-8a30-186fae58d2e8.png"/></br></li>
+</ol>
+<h3 id="_2">检查配置</h3>
+<p>打开命令行窗口，输入<code>java -version</code>可以查看到java版本，如下</p>
+<div class="highlight"><pre><span></span>C:\Documents and Settings\Administrator&gt;java -version
+java version "1.8.0_102"
+Java(TM) SE Runtime Environment (build 1.8.0_102-b14)
+Java HotSpot(TM) Client VM (build 25.102-b14, mixed mode, sharing)
+</pre></div>
+<p>输入<code>javac</code>可以查看到帮助信息，如下</p>
+<div class="highlight"><pre><span></span>C:\Documents and Settings\Administrator&gt;javac
+用法: javac &lt;options&gt; &lt;source files&gt;
+其中, 可能的选项包括:
+  -g                         生成所有调试信息
+  -g:none                    不生成任何调试信息
+  -g:{lines,vars,source}     只生成某些调试信息
+  -nowarn                    不生成任何警告
+  -verbose                   输出有关编译器正在执行的操作的消息
+  -deprecation               输出使用已过时的 API 的源位置
+  -classpath &lt;路径&gt;            指定查找用户类文件和注释处理程序的位置
+  -cp &lt;路径&gt;                   指定查找用户类文件和注释处理程序的位置
+  -sourcepath &lt;路径&gt;           指定查找输入源文件的位置
+  -bootclasspath &lt;路径&gt;        覆盖引导类文件的位置
+  -extdirs &lt;目录&gt;              覆盖所安装扩展的位置
+  -endorseddirs &lt;目录&gt;         覆盖签名的标准路径的位置
+  -proc:{none,only}          控制是否执行注释处理和/或编译。
+  -processor &lt;class1&gt;[,&lt;class2&gt;,&lt;class3&gt;...] 要运行的注释处理程序的名称; 绕过默
+认的搜索进程
+  -processorpath &lt;路径&gt;        指定查找注释处理程序的位置
+  -parameters                生成元数据以用于方法参数的反射
+  -d &lt;目录&gt;                    指定放置生成的类文件的位置
+  -s &lt;目录&gt;                    指定放置生成的源文件的位置
+  -h &lt;目录&gt;                    指定放置生成的本机标头文件的位置
+  -implicit:{none,class}     指定是否为隐式引用文件生成类文件
+  -encoding &lt;编码&gt;             指定源文件使用的字符编码
+  -source &lt;发行版&gt;              提供与指定发行版的源兼容性
+  -target &lt;发行版&gt;              生成特定 VM 版本的类文件
+  -profile &lt;配置文件&gt;            请确保使用的 API 在指定的配置文件中可用
+  -version                   版本信息
+  -help                      输出标准选项的提要
+  -A关键字[=值]                  传递给注释处理程序的选项
+  -X                         输出非标准选项的提要
+  -J&lt;标记&gt;                     直接将 &lt;标记&gt; 传递给运行时系统
+  -Werror                    出现警告时终止编译
+  @&lt;文件名&gt;                     从文件读取选项和文件名
+</pre></div>
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2017-01-15T11:29:00+08:00">2017/01/15 11:29:00</time>
+
+<h4>Last Updated</h4>
+<time datetime="2017-01-15T11:29:00+08:00">2017/01/15 11:29:00</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#java-ref">java</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags.html#huan-jing-bian-liang-ref">环境变量
+                    <span>1</span>
+</a></li>
+                <li><a href="/tags.html#java-ref">java
+                    <span>1</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="wei_pengfei@163.com" title="My Email Address" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-envelope sidebar-social-links"></i></a>
+    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-another social link sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>
